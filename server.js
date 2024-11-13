@@ -6,7 +6,7 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 const app = express ()
-const PORT = 8090;
+const port = process.env.PORT || 4000;
 let DB = process.env.DB
 
 
@@ -20,6 +20,6 @@ mongoose.connect(DB, {
 });
 
 
-app.listen(PORT, () =>{
+app.listen(port, () =>{
 console.log(`Server listen on http://localhost:${PORT}/api/post`)
 })
